@@ -37,5 +37,26 @@ $(document).ready(function() {
         }
     }
 
+    $('button').click(blockEffects);
+    function blockEffects(e) {
+        const target = e.target.className;
+        console.log(target);
+
+        switch(target) { // if target matches with any of the cases that specific block of code will be executed.
+            case 'btnEffectBlue':
+                $('.effectsTargetA').hide();
+                break;
+            case 'btnEffectOrange':
+                $('.effectsTargetB').hide();
+                break;
+            case 'btnEffectRed':
+                $('.effectsTargetC').hide();
+                break;
+            case 'btnEffectShowAll':
+                $('.block').show();
+                break;
+        }
+        
+    }
 
 });

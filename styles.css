@@ -6,7 +6,29 @@
 }
 
 #rectangle {
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    height: 200px;
     background-color: blueviolet;
+}
+
+.container {
+    padding: 3rem 0;
+}
+
+.block {
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+}
+
+.block.effectsTargetA {
+    background-color: blue;
+}
+
+.block.effectsTargetB {
+    background-color: orange;
+}
+
+.block.effectsTargetC {
+    background-color: red;
 }

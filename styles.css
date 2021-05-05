@@ -4,3 +4,9 @@
     border-color: black;
     border-style: solid;
 }
+
+#rectangle {
+    width: 600px;
+    height: 400px;
+    background-color: blueviolet;
+}

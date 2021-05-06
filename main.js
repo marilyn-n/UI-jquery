@@ -58,5 +58,45 @@ $(document).ready(function() {
         }
         
     }
+    
+    let p1, p2, p3 = false;
+
+    $('.paragraph').hide();
+    $('.panel').click(togglePanel);
+
+    function togglePanel(e) {
+        const target = e.target.className;
+
+        switch(target) {
+            case 'panel-title-1':
+                if(!p1) {
+                    $('.paragraph-1').slideDown();
+                    p1 = !p1;
+                } else {
+                    $('.paragraph-1').slideUp();
+                    p1 = !p1;
+                }
+                break;
+            case 'panel-title-2':
+                if(!p2) {
+                    $('.paragraph-2').slideDown();
+                    p2 = !p2;
+                } else {
+                    $('.paragraph-2').slideUp();
+                    p2 = !p2;
+                }
+                break;
+            case 'panel-title-3':
+                if (!p3) {
+                    $('.paragraph-3').slideDown();
+                    p3 = !p3;
+                } else {
+                    $('.paragraph-3').slideUp();
+                    p3 = !p3;
+                }
+                break;
+        }
+       
+    }
 
 });

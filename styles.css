@@ -75,3 +75,29 @@ table, th, td {
 .active{
     background-color: blueviolet;
 }
+
+/* card */
+
+.container-4 {
+    display: flex;
+}
+
+.divCard {
+    height: auto;
+    width: 30%;
+    border: 1px solid grey;
+    border-radius: 4px;
+    margin-right: 1rem;
+    padding: 1rem;
+}
+
+
+.divCard__thumbnail {
+    height: auto;
+    width: 100%;
+    cursor: pointer;
+}
+
+.link {
+    text-align: center;
+}

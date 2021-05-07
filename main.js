@@ -120,4 +120,37 @@ $(document).ready(function() {
         
     })
 
+    // append(), prepend(), before(), after()
+
+    $('.divCard-1 .divCard__thumbnail').one('click', function() {
+        $(this).after(
+        `<a class='link' href='http://https://bit.ly/3vGYd6i'>
+            https://bit.ly/3vGYd6i</a>
+        `)
+    });
+
+    $('.divCard-2 .divCard__thumbnail').one('click', function() {
+        $(this).before(
+        `<a class='link' href='http://https://bit.ly/3vGYd6i'>
+            https://bit.ly/3vGYd6i</a>
+        `)
+    });
+
+    $('.divCard-3 .divCard__head').one('click', function() {
+        $(this).prepend(
+        `<div style="width:100%;height:0;padding-bottom:64%;position:relative;">
+            <iframe src="https://giphy.com/embed/6TtiOUb2NC22AP4P7a" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+            
+        `)
+    });
+
+    $('.divCard-4 .divCard__head').one('click', function() {
+        $(this).append(
+        `<div style="width:100%;height:0;padding-bottom:64%;position:relative;">
+            <iframe src="https://giphy.com/embed/6TtiOUb2NC22AP4P7a" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+        `)
+    });
+
 });

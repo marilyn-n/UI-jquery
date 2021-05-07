@@ -54,11 +54,10 @@ $(document).ready(function() {
                 break;
             case 'btnEffectShowAll':
                 $('.block').show();
-                break;
         }
         
     }
-    
+
     let p1, p2, p3 = false;
 
     $('.paragraph').hide();
@@ -94,9 +93,31 @@ $(document).ready(function() {
                     $('.paragraph-3').slideUp();
                     p3 = !p3;
                 }
-                break;
         }
        
     }
+
+    // Adding and removing classes
+
+    //on mouseover add orange background color
+    $('tr').mouseover(function() {
+        $(this).addClass('over');
+    })
+
+    //on mouseleave remove orange background color
+    $('tr').mouseleave(function() {
+        $(this).removeClass('over');
+    })
+
+    //on click add active class
+    // if tr has active class, remove it otherwise add it
+    $('tr').click(function() {
+        if($(this).hasClass('active')) {
+            $(this).removeClass('active');
+        } else {
+            $(this).addClass('active');
+        }
+        
+    })
 
 });

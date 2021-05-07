@@ -101,3 +101,27 @@ table, th, td {
 .link {
     text-align: center;
 }
+
+/* dragable square */
+
+#moveMe {
+    background-color: orange;
+    width: 200px;
+    height: 200px;
+}
+
+.container-5 {
+    margin: 10px;
+}
+
+#controls {
+    margin: 20px;
+    width: 220px;
+    text-align: center;
+}
+
+#controls button {
+    width: 100px;
+    padding: 5px;
+    margin: 5px;
+}

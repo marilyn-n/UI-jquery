@@ -153,4 +153,41 @@ $(document).ready(function() {
         `)
     });
 
+
+
+    // jquery UI draggable square
+    
+    $('#moveMe').draggable();
+    $('#moveMe').mousemove(getPosition);
+
+    $('#controls button').click(function(e) {
+        const target = e.target.childNodes[0].nodeValue;
+        console.log(target);
+
+        switch(target){
+            case 'Up':
+                $('#moveMe').css('top', '-=10px');
+            break;
+            case 'Down':
+                $('#moveMe').css('top', '+=10px');
+            break;
+            case 'Left':
+                $('#moveMe').css('left', '-=10px');
+            break;
+            case 'Right':
+                $('#moveMe').css('left', '+=10px');
+            break;
+        }
+
+        getPosition();
+    })
+
+    function getPosition() {
+        const position = $('#moveMe').position();
+        const posX = Math.round(position.top);
+        const posY = Math.round(position.left);
+        const out = `Position X: ${posX} Position Y: ${posY}`;
+        $('#posOut').text(out);
+    }   
+
 });

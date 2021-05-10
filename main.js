@@ -100,18 +100,18 @@ $(document).ready(function() {
     // Adding and removing classes
 
     //on mouseover add orange background color
-    $('tr').mouseover(function() {
+    $('#table-effects tr').mouseover(function() {
         $(this).addClass('over');
     })
 
     //on mouseleave remove orange background color
-    $('tr').mouseleave(function() {
+    $('#table-effects tr').mouseleave(function() {
         $(this).removeClass('over');
     })
 
     //on click add active class
     // if tr has active class, remove it otherwise add it
-    $('tr').click(function() {
+    $('#table-effects tr').click(function() {
         if($(this).hasClass('active')) {
             $(this).removeClass('active');
         } else {
@@ -221,5 +221,26 @@ $(document).ready(function() {
         const output = `Font size is: ${paragraph.css('font-size')}, Font family is: ${paragraph.css('font-family')}`;
         $('.container-6 span').text(output);
     }
+
+
+    // table data
+
+
+    function tableData() {
+        $.getJSON("./data/capitals.json", function(data) {
+            $.each(data, function(key, val) {
+                const state = val.name;
+                const capital = val.capital;
+                $('#jquery-data').append(`
+                    <tr>
+                        <td>${state}</td>
+                        <td>${capital}</td>
+                    </tr>
+                `);
+            })
+        })
+    }
+
+    tableData();
 
 });

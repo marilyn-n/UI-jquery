@@ -188,6 +188,35 @@ $(document).ready(function() {
         const posY = Math.round(position.left);
         const out = `Position X: ${posX} Position Y: ${posY}`;
         $('#posOut').text(out);
-    }   
+    }
+    
+    
+    $('.container-6 button').click(textStyling);
+    let index = 0;
+    
+    function textStyling(e) {
+        const fonts = ["Arial" ,"cursive", "fantasy", "monoscope", "georgia"];
+        const target = e.target.className;
+        const paragraph = $('.container-6 p.altered-text');
+        
+        switch(target) {
+            case 'font-larger-bnt':
+                paragraph.css('font-size', '+=.10rem');
+                break;
+            case 'font-smaller-btn':
+                paragraph.css('font-size', '-=.10rem');
+                break;
+            case 'font-change-btn':
+                // both ways interate over the array adding 1
+                // index = (index +1) % fonts.length;
+                // index < fonts.length? index++ : index = 0;
+                index < fonts.length? index++ : index = 0;
+                paragraph.css('font-family', fonts[index]);
+                break;
+            case 'font-weight-btn':
+                paragraph.css('font-weight', 'bold');
+                break;
+        }
+    }
 
 });

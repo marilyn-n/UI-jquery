@@ -125,3 +125,23 @@ table, th, td {
     padding: 5px;
     margin: 5px;
 }
+
+/* Css rules */
+
+.container-6 {
+    border: 1px dotted black;
+    height: auto;
+    width: 50%;
+    background-color: aliceblue;
+    padding: 2rem;
+}
+
+.container-6 button {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    color: white;
+    background-color: blueviolet;
+    border: 1px solid blueviolet;
+    margin: .5rem;
+    cursor: pointer;
+}

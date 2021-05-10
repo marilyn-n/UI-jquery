@@ -193,7 +193,7 @@ $(document).ready(function() {
     
     $('.container-6 button').click(textStyling);
     let index = 0;
-    
+
     function textStyling(e) {
         const fonts = ["Arial" ,"cursive", "fantasy", "monoscope", "georgia"];
         const target = e.target.className;
@@ -214,9 +214,12 @@ $(document).ready(function() {
                 paragraph.css('font-family', fonts[index]);
                 break;
             case 'font-weight-btn':
-                paragraph.css('font-weight', 'bold');
+                paragraph.toggleClass('bold');
                 break;
         }
+
+        const output = `Font size is: ${paragraph.css('font-size')}, Font family is: ${paragraph.css('font-family')}`;
+        $('.container-6 span').text(output);
     }
 
 });

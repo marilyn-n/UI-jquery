@@ -154,3 +154,10 @@ table, th, td {
 .bold {
     font-weight: bolder;
 }
+
+/* weather form */
+
+#weather-form #output {
+    padding: 1rem;
+    background-color: rgb(228, 250, 194);
+}

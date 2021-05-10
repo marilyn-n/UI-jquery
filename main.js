@@ -243,4 +243,38 @@ $(document).ready(function() {
 
     tableData();
 
+
+    
+
 });
+
+
+// get weather mini app
+
+$('#btnGetWeather').click(function(e) {
+    e.preventDefault();
+    let inputValue = $('input#city').val(); // get input value
+    let api = `cf703cde5684f6fd594aaece7c6cc8de` // api key
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${inputValue}&units=metric&appid=${api}`;
+
+    //   $.getJSON(url, function( json ) {
+    //     console.log(json);
+    //    }).done(function( data ) {
+    //     console.log(data);
+    //   });
+      
+      $.ajax(url).done(function(response){
+          console.log(response);
+          const res = response;
+
+          let output =` 
+            Temperature: ${res.main.temp} <br/>
+            Feels like ${res.main.feels_like} <br/>
+            High today: ${res.main.temp_max} <br/>
+            Low today: ${res.main.temp_min} <br/>
+            ${res.weather[0].description}
+          `
+
+          $('div#output').html(output);
+      })
+})

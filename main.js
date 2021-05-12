@@ -37,10 +37,9 @@ $(document).ready(function() {
         }
     }
 
-    $('button').click(blockEffects);
+    $('.container button').click(blockEffects);
     function blockEffects(e) {
         const target = e.target.className;
-        console.log(target);
 
         switch(target) { // if target matches with any of the cases that specific block of code will be executed.
             case 'btnEffectBlue':
@@ -257,12 +256,14 @@ $('#btnGetWeather').click(function(e) {
     let api = `cf703cde5684f6fd594aaece7c6cc8de` // api key
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${inputValue}&units=metric&appid=${api}`;
 
+    // other way to make a get call with jquery
     //   $.getJSON(url, function( json ) {
     //     console.log(json);
     //    }).done(function( data ) {
     //     console.log(data);
     //   });
       
+    // other way to make a get call with ajax
       $.ajax(url).done(function(response){
           console.log(response);
           const res = response;
@@ -278,3 +279,51 @@ $('#btnGetWeather').click(function(e) {
           $('div#output').html(output);
       })
 })
+
+  //   Adding JSON data / Music form
+
+  //songs variable is out otherwise everytime we click on .btnAdd the function will fire and songs will reset
+  const songs = []; 
+
+$('.btnAdd').click(function(e) {
+    e.preventDefault();
+    
+    // we get the input values
+    let song = $('#song').val();
+    let artist = $('#artist').val();
+
+    if ($('#song').val() && $('#artist').val()) { //if song and artist inputs have value do this
+        // we store data in an obj inside array
+        let data = [{ songName: song, artistName: artist }];
+        songs.push(data);
+
+        // we empty inputs
+        $('#song').val('');
+        $('#artist').val('');
+
+        // we recreate our table to fill it out
+        $('table').html(`
+            <tr>
+                <th>Song</th>
+                <th>Artist</th>
+            </tr>`
+        );
+
+        // we iterate over songs array
+        $.each(songs, function(key, val) {
+            $('#music-table tr:last').after(
+                `<tr>
+                    <td>${val[0].songName}</td>
+                    <td>${val[0].artistName}</td>
+                </tr>`
+            )
+        })
+
+    } else {
+        console.log('nothing was added here');
+    }
+
+});
+
+
+

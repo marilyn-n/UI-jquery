@@ -161,3 +161,12 @@ table, th, td {
     padding: 1rem;
     background-color: rgb(228, 250, 194);
 }
+
+/* music form / adding data */
+#music-form {
+    background-color: rgb(207, 90, 207);
+    width: 50%;
+    color: white;
+    padding: 1.5rem;
+
+}

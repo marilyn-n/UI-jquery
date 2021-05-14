@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="Goal.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>Goal tracker app</title>
+    <style>
+        footer{
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Start of first page -->
+    <div data-role="page" id="enterGoals">
+
+        <div data-role="header">
+            <h1>Daily Goal Tracker</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <div id="goalsList">
+            </div>
+            <form>
+                <label for="goal">Enter Your Goal</label>
+                <textarea id="goal" data-mini="true" cols="40" rows="6"></textarea>
+            </form>
+            <button id="btnSave">Save My Goal</button>
+            <button id="btnNewDay">New Day (Clear All Goals)</button>
+
+            <div data-role="popup" id="popupBasic">
+               <p>Do you want to complete this goal?<p>
+                <button id="btnComplete" onclick="completeGoal()">Yes</button>
+                <button id="btnNo" onclick="closeDialog()">No</button>
+            </div>
+        </div><!-- /content -->
+
+        <div data-role="footer" class="footer">
+            <h4>2021 udemy jquery course</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+    <script src="goalControler.js"></script>
+</body>
+</html>

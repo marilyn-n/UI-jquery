@@ -278,52 +278,9 @@ $('#btnGetWeather').click(function(e) {
 
           $('div#output').html(output);
       })
-})
-
-  //   Adding JSON data / Music form
-
-  //songs variable is out otherwise everytime we click on .btnAdd the function will fire and songs will reset
-  const songs = []; 
-
-$('.btnAdd').click(function(e) {
-    e.preventDefault();
-    
-    // we get the input values
-    let song = $('#song').val();
-    let artist = $('#artist').val();
-
-    if ($('#song').val() && $('#artist').val()) { //if song and artist inputs have value do this
-        // we store data in an obj inside array
-        let data = [{ songName: song, artistName: artist }];
-        songs.push(data);
-
-        // we empty inputs
-        $('#song').val('');
-        $('#artist').val('');
-
-        // we recreate our table to fill it out
-        $('table').html(`
-            <tr>
-                <th>Song</th>
-                <th>Artist</th>
-            </tr>`
-        );
-
-        // we iterate over songs array
-        $.each(songs, function(key, val) {
-            $('#music-table tr:last').after(
-                `<tr>
-                    <td>${val[0].songName}</td>
-                    <td>${val[0].artistName}</td>
-                </tr>`
-            )
-        })
-
-    } else {
-        console.log('nothing was added here');
-    }
-
 });
+
+
 
 
 

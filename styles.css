@@ -163,7 +163,7 @@ table, th, td {
 }
 
 /* music form / adding data */
-#music-form {
+.container-8 {
     background-color: rgb(207, 90, 207);
     width: 50%;
     color: white;

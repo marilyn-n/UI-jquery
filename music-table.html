@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <title>Music table / adding and removing songs</title>
+</head>
+<body>
+
+    <h3>Adding JSON data / favorite songs</h3>
+    <div class="container-8">
+        <form id="music-form" action="">
+            <label for="song">Song</label>
+            <input id="song" type="text" placeholder="song name">
+            <br>
+            <br>
+            <label for="artist">Artist</label>
+            <input id="artist" type="text" placeholder="artist name">
+            <br>
+            <br>
+            <button type="button" class="addSong">Add song</button>
+            <br>
+            <br>
+        </form>
+        <table id="music-table">
+            <tr>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Delete</th>
+            </tr>
+        </table>
+    </div>
+    
+    <script src="./musicTable.js"></script>
+</body>
+</html>
